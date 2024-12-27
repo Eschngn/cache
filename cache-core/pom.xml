@@ -6,15 +6,13 @@
         <artifactId>cache</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
     <artifactId>cache-core</artifactId>
-    <packaging>jar</packaging>
-
-    <name>cache-core</name>
-    <url>http://maven.apache.org</url>
 
 
     <dependencies>
-
+        <dependency>
+            <groupId>com.github.eschngn</groupId>
+            <artifactId>cache-api</artifactId>
+        </dependency>
     </dependencies>
 </project>

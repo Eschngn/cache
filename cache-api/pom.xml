@@ -8,14 +8,5 @@
     </parent>
 
     <artifactId>cache-api</artifactId>
-    <packaging>jar</packaging>
 
-    <name>cache-api</name>
-    <url>http://maven.apache.org</url>
-
-
-
-    <dependencies>
-
-    </dependencies>
 </project>

@@ -17,9 +17,45 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.compiler.level>1.7</project.compiler.level>
+    <plugin.compiler.version>3.2</plugin.compiler.version>
+    <plugin.maven-javadoc-plugin.version>2.9.1</plugin.maven-javadoc-plugin.version>
   </properties>
 
-  <dependencies>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.github.eschngn</groupId>
+        <artifactId>cache-api</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.eschngn</groupId>
+        <artifactId>cache-core</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <build>
+    <plugins>
+      <!--compiler plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${plugin.compiler.version}</version>
+        <configuration>
+          <source>${project.compiler.level}</source>
+          <target>${project.compiler.level}</target>
+          <encoding>${project.build.sourceEncoding}</encoding>
+          <compilerArgument>-proc:none</compilerArgument>
+        </configuration>
+      </plugin>
 
-  </dependencies>
+      <!-- Javadoc -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>${plugin.maven-javadoc-plugin.version}</version>
+      </plugin>
+    </plugins>
+  </build>
 </project>
